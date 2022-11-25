@@ -19,11 +19,9 @@ public class LoginTest extends BaseClass {
 	public void initialsetup() {
 		initiate();
 	log= new PomLogin();
-
 	}
 	private void initiate() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 	@Test

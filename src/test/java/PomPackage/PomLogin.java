@@ -8,7 +8,6 @@ import Basepackage.BaseClass;
 
 
 public class PomLogin extends BaseClass {
-
 	@FindBy(name="username")
 	WebElement Username;
 	@FindBy(name="password")
@@ -16,26 +15,19 @@ public class PomLogin extends BaseClass {
 	@FindBy(css="#app > div.orangehrm-login-layout > div > div.orangehrm-login-container > div > div.orangehrm-login-slot > div.orangehrm-login-form > form > div.oxd-form-actions.orangehrm-login-action > button")			
 	WebElement LoginButton;
 	
-	public PomLogin() {
-	
-	PageFactory.initElements(driver, this);
-	
-}
-	public void typeusername(String name) {
-	
-	Username.sendKeys("name");
+	public PomLogin() {	
+		PageFactory.initElements(driver, this);	
 	}
-	public void typepassword(String pass) {
-		
+	public void typeusername(String name) {	
+		Username.sendKeys("name");
+	}
+	public void typepassword(String pass) {		
 		Password.sendKeys("pass");
 	}
-	public void clickbutton() {
-		
+	public void clickbutton() {		
 		LoginButton.click();
 	}
-	
-
 	public String verify() {	
-	return driver.getTitle();
+		return driver.getTitle();
 	}
 }
