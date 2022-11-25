@@ -18,7 +18,7 @@ public class BaseClass {
 	 public BaseClass() {
 
 		try {
-		FileInputStream file=new FileInputStream ("C:\\Users\\DELL\\eclipse-workspace\\HRM\\src\\test\\java\\enviornmentvariables\\config.properties");
+		FileInputStream file=new FileInputStream ("C:\\Users\\DELL\\eclipse-workspace\\OrangeHRM\\src\\test\\java\\enviornmentvariables\\config.properties");
 		   prop.load(file);  
 		}
 		
