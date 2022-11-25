@@ -2,17 +2,18 @@ package PomPackage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import Basepackage.BaseClass;
 
 
 public class PomLogin extends BaseClass {
-	@FindBy(xpath="//*[@name='username']")
+	@FindBy(id = "username")	
 	WebElement Username;
-	@FindBy(xpath="//*[@name='password']")
+	@FindBy(id = "password")
 	WebElement Password;
-	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")			
+	@FindBy(id="loginsubmit")			
 	WebElement LoginButton;
 	
 	public PomLogin() {	

@@ -25,8 +25,8 @@ public class LoginTest extends BaseClass {
 	@Test
 	public void gettitle() {
 		String actual=log.verify();
-		System.out.println("actual");		
-		Assert.assertEquals(actual,"OrangeHRM");
+		System.out.println(actual);		
+		Assert.assertEquals(actual,"Sentrifugo - Open Source HRMS");
 	}
 	
 	@Test 
