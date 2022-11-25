@@ -28,7 +28,7 @@ public class BaseClass {
 	 }
 
 
-	public static void initation() {
+	public static void initate() {
 		String browsername=	prop.getProperty("browser");  
 	  if (browsername.equals("ChromeDriver")) {
 		  System.setProperty("WebDriver.Chrome.Driver","ChromeDriver.exe.");

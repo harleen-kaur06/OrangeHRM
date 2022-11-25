@@ -8,21 +8,21 @@ import Basepackage.BaseClass;
 
 
 public class PomLogin extends BaseClass {
-	@FindBy(name="username")
+	@FindBy(xpath="//*[@name='username']")
 	WebElement Username;
-	@FindBy(name="password")
+	@FindBy(xpath="//*[@name='password']")
 	WebElement Password;
-	@FindBy(css="#app > div.orangehrm-login-layout > div > div.orangehrm-login-container > div > div.orangehrm-login-slot > div.orangehrm-login-form > form > div.oxd-form-actions.orangehrm-login-action > button")			
+	@FindBy(xpath="//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")			
 	WebElement LoginButton;
 	
 	public PomLogin() {	
 		PageFactory.initElements(driver, this);	
 	}
 	public void typeusername(String name) {	
-		Username.sendKeys("name");
+		Username.sendKeys("username");
 	}
 	public void typepassword(String pass) {		
-		Password.sendKeys("pass");
+		Password.sendKeys("password");
 	}
 	public void clickbutton() {		
 		LoginButton.click();
