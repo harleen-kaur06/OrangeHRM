@@ -17,16 +17,23 @@ public class LoginTest extends BaseClass {
 	}
 	
 	@BeforeMethod
-	public void initsetup() {
+	public void initsetup() throws InterruptedException {
 		initate();		
 		log= new PomLogin();
+		  
 	}
 
 	@Test
 	public void gettitle() {
 		String actual=log.verify();
-		System.out.println(actual);		
-		Assert.assertEquals(actual,"Sentrifugo - Open Source HRMS");
+		System.out.println("Verifying the page title has started");
+		System.out.println(actual);	
+		System.out.println("The page title has been successfully verified");
+		String actualUrl="url";
+		String expectedUrl= driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl,actualUrl);	
+		//Assert.assertEquals(actual,"Sentrifugo - Open Source HRMS");
+		
 	}
 	
 	@Test 
@@ -36,15 +43,14 @@ public class LoginTest extends BaseClass {
 		log.clickbutton();
 	}
 	
-	@DataProvider 
+	/*@DataProvider 
 	public Object[][] Details(){ 
 		Object result[][]=ExcelSheet.readdata("Sheet1"); return result; 
-	}
+	}*/
 
 	@AfterMethod
-	public void close() {
-		if (driver != null) {
-            driver.quit();
-        }
+	public void AfterMethod() {		
+		System.out.println("User logged in successfully");
+		driver.close();
 	}
 }

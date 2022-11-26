@@ -20,12 +20,15 @@ public class PomLogin extends BaseClass {
 		PageFactory.initElements(driver, this);	
 	}
 	public void typeusername(String name) {	
+		System.out.println("Entering the username");
 		Username.sendKeys("username");
 	}
-	public void typepassword(String pass) {		
+	public void typepassword(String pass) {
+		System.out.println("Entering the password");
 		Password.sendKeys("password");
 	}
-	public void clickbutton() {		
+	public void clickbutton() {	
+		System.out.println("Clicking login button");
 		LoginButton.click();
 	}
 	public String verify() {	
