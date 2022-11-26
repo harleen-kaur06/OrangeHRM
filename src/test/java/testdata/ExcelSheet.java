@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -18,15 +19,19 @@ public class ExcelSheet {
 			file=new FileInputStream("C:\\Users\\DELL\\git\\OrangeHRM\\src\\test\\java\\testdata\\Details.xlsx");
 		}
 		catch(FileNotFoundException e) {
-			e. printStackTrace(); 
+			e.printStackTrace(); 
 		}
 		try { 
-			book= WorkbookFactory.create(file); //HSSF XSSF 
+			book=WorkbookFactory.create(file); //HSSF XSSF 
 		} 
+		catch(InvalidFormatException a){
+	         a.printStackTrace();
+	    }	
 		catch(IOException a) { 
 			a.printStackTrace(); 
 		} 
-	
+		
+		
 		sheet=book.getSheet(Sheetname);		
 		Object[][] data=new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()]; 
 				
